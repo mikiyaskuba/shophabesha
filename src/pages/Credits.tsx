@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, onSnapshot, where } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 import { db, auth } from "../lib/firebase";
 import { format } from "date-fns";
 import BottomNav from "../components/BottomNav";

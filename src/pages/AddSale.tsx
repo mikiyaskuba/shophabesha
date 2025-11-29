@@ -14,7 +14,7 @@ export default function AddSale() {
   const [isCredit, setIsCredit] = useState(false);
   const [saving, setSaving] = useState(false);
 
-  // ... (offline sync useEffect stays the same)
+  
 
   const handleSave = async () => {
     if (!customer || !amount || saving) return;
