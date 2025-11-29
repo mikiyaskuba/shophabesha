@@ -1,5 +1,5 @@
 // Dashboard.tsx
-import React, { useEffect, useMemo, useState } from "react";
+import  { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { db, auth } from "../lib/firebase";
@@ -10,12 +10,12 @@ import {
   TrendingUp,
   CreditCard,
   Users,
-  Clock,
+  
   ArrowUpRight,
   ArrowDownRight,
 } from "lucide-react";
 
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar, CartesianGrid } from "recharts";
+import { XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar, CartesianGrid } from "recharts";
 import { motion } from "framer-motion";
 
 interface SaleRaw {

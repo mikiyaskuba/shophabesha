@@ -9,6 +9,8 @@ interface Sale {
   customer: string;
   amount: number;
   timestamp: any;
+  isCredit: boolean;        // ← ADD
+  shopId: string;
 }
 
 export default function Credits() {
@@ -20,7 +22,7 @@ export default function Credits() {
       const data: Sale[] = [];
       snapshot.forEach((doc) => {
         const sale = doc.data() as Sale;
-        if (sale.isCredit && sale.shopId === auth.currentUser?.uid) {
+        if (sale.isCredit && sale.shopId ===( auth.currentUser?.uid || "demo-shop")) {
           data.push({ ...sale, id: doc.id });
         }
       });
