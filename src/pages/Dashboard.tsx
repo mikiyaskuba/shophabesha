@@ -54,6 +54,12 @@ const formatDay = (d: Date) => {
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  useEffect(() => {
+  const savedPhone = localStorage.getItem("ownerPhone");
+  if (!savedPhone) {
+    navigate("/");
+  }
+}, [navigate]);
   const [sales, setSales] = useState<Sale[]>([]);
   const [viewRange, setViewRange] = useState<"7d" | "30d">("7d"); // chart toggle
   const [loading, setLoading] = useState(true);

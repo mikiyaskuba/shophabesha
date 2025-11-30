@@ -1,4 +1,4 @@
-import { Home, PlusCircle, Users, CreditCard } from "lucide-react";
+import { Home, PlusCircle, Users, CreditCard, Settings } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function BottomNav() {
@@ -10,11 +10,12 @@ export default function BottomNav() {
     { icon: PlusCircle, label: "Add", path: "/add" },
     { icon: Users, label: "Customers", path: "/customers" },
     { icon: CreditCard, label: "Credit", path: "/credits" },
+    { icon: Settings, label: "Settings", path: "/settings" }, // ✅ Added
   ];
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-accent/20">
-      <div className="grid grid-cols-4 py-2">
+      <div className="grid grid-cols-5 py-2"> {/* Updated to 5 columns */}
         {tabs.map((tab) => (
           <button
             key={tab.path}

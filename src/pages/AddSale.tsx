@@ -1,6 +1,6 @@
 
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { db, auth } from "../lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
@@ -8,6 +8,12 @@ import BottomNav from "../components/BottomNav";
 
 export default function AddSale() {
   const navigate = useNavigate();
+  useEffect(() => {
+  const savedPhone = localStorage.getItem("ownerPhone");
+  if (!savedPhone) {
+    navigate("/");
+  }
+}, [navigate]);
   const [customer, setCustomer] = useState("");
   const [phone, setPhone] = useState("");  // ← NEW
   const [amount, setAmount] = useState("");
