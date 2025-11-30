@@ -164,7 +164,7 @@ export default function Customers() {
   };
 
   // ------------------------ TELEGRAM (open composer with prefilled text) ------------------------
-  const sendTelegram = (phone: string, remaining: number) => {
+  const sendTelegram = (_phone: string, remaining: number) => {
     const { telebirr, cbe, other, shopName } = getOwnerInfo();
 
     const lines = [
